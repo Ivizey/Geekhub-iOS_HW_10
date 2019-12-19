@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Group" representedClassName="Group" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="group" inverseEntity="Student"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="teacher" inverseEntity="Teacher"/>
+    </entity>
+    <entity name="Project" representedClassName="Project" syncable="YES">
+        <attribute name="theme" optional="YES" attributeType="String"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="projects" inverseEntity="Student"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="students" inverseEntity="Group"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="student" inverseEntity="Project"/>
+    </entity>
+    <entity name="Teacher" representedClassName="Teacher" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="teacher" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="teachers" inverseEntity="Group"/>
+    </entity>
+    <elements>
+        <element name="Group" positionX="-36.7734375" positionY="-223.5859375" width="128" height="88"/>
+        <element name="Project" positionX="-262" positionY="27.4921875" width="128" height="73"/>
+        <element name="Student" positionX="-270.66015625" positionY="-203.3125" width="128" height="103"/>
+        <element name="Teacher" positionX="-18" positionY="27" width="128" height="88"/>
+    </elements>
+</model>

@@ -11,9 +11,18 @@
 		4739ED7323ABBB6300A9F689 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED7223ABBB6300A9F689 /* SceneDelegate.swift */; };
 		4739ED7523ABBB6300A9F689 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED7423ABBB6300A9F689 /* ViewController.swift */; };
 		4739ED7823ABBB6300A9F689 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4739ED7623ABBB6300A9F689 /* Main.storyboard */; };
-		4739ED7B23ABBB6300A9F689 /* Geekhub_iOS_HW_10.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED7923ABBB6300A9F689 /* Geekhub_iOS_HW_10.xcdatamodeld */; };
+		4739ED7B23ABBB6300A9F689 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED7923ABBB6300A9F689 /* Model.xcdatamodeld */; };
 		4739ED7D23ABBB6800A9F689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4739ED7C23ABBB6800A9F689 /* Assets.xcassets */; };
 		4739ED8023ABBB6800A9F689 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4739ED7E23ABBB6800A9F689 /* LaunchScreen.storyboard */; };
+		4739ED8823ABC12F00A9F689 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED8723ABC12F00A9F689 /* CoreDataStack.swift */; };
+		4739ED9223ABC5E400A9F689 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED8A23ABC5E400A9F689 /* Student+CoreDataClass.swift */; };
+		4739ED9323ABC5E400A9F689 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED8B23ABC5E400A9F689 /* Student+CoreDataProperties.swift */; };
+		4739ED9423ABC5E400A9F689 /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED8C23ABC5E400A9F689 /* Teacher+CoreDataClass.swift */; };
+		4739ED9523ABC5E400A9F689 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED8D23ABC5E400A9F689 /* Teacher+CoreDataProperties.swift */; };
+		4739ED9623ABC5E400A9F689 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED8E23ABC5E400A9F689 /* Project+CoreDataClass.swift */; };
+		4739ED9723ABC5E400A9F689 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED8F23ABC5E400A9F689 /* Project+CoreDataProperties.swift */; };
+		4739ED9823ABC5E400A9F689 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED9023ABC5E400A9F689 /* Group+CoreDataClass.swift */; };
+		4739ED9923ABC5E400A9F689 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739ED9123ABC5E400A9F689 /* Group+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		4739ED7C23ABBB6800A9F689 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4739ED7F23ABBB6800A9F689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4739ED8123ABBB6800A9F689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4739ED8723ABC12F00A9F689 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4739ED8A23ABC5E400A9F689 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4739ED8B23ABC5E400A9F689 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4739ED8C23ABC5E400A9F689 /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4739ED8D23ABC5E400A9F689 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4739ED8E23ABC5E400A9F689 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4739ED8F23ABC5E400A9F689 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4739ED9023ABC5E400A9F689 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4739ED9123ABC5E400A9F689 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +83,26 @@
 				4739ED7C23ABBB6800A9F689 /* Assets.xcassets */,
 				4739ED7E23ABBB6800A9F689 /* LaunchScreen.storyboard */,
 				4739ED8123ABBB6800A9F689 /* Info.plist */,
-				4739ED7923ABBB6300A9F689 /* Geekhub_iOS_HW_10.xcdatamodeld */,
+				4739ED8923ABC55100A9F689 /* CoreData */,
 			);
 			path = "Geekhub-iOS_HW_10";
+			sourceTree = "<group>";
+		};
+		4739ED8923ABC55100A9F689 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4739ED8A23ABC5E400A9F689 /* Student+CoreDataClass.swift */,
+				4739ED8B23ABC5E400A9F689 /* Student+CoreDataProperties.swift */,
+				4739ED8C23ABC5E400A9F689 /* Teacher+CoreDataClass.swift */,
+				4739ED8D23ABC5E400A9F689 /* Teacher+CoreDataProperties.swift */,
+				4739ED8E23ABC5E400A9F689 /* Project+CoreDataClass.swift */,
+				4739ED8F23ABC5E400A9F689 /* Project+CoreDataProperties.swift */,
+				4739ED9023ABC5E400A9F689 /* Group+CoreDataClass.swift */,
+				4739ED9123ABC5E400A9F689 /* Group+CoreDataProperties.swift */,
+				4739ED7923ABBB6300A9F689 /* Model.xcdatamodeld */,
+				4739ED8723ABC12F00A9F689 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +176,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4739ED8823ABC12F00A9F689 /* CoreDataStack.swift in Sources */,
+				4739ED9923ABC5E400A9F689 /* Group+CoreDataProperties.swift in Sources */,
+				4739ED9823ABC5E400A9F689 /* Group+CoreDataClass.swift in Sources */,
+				4739ED9223ABC5E400A9F689 /* Student+CoreDataClass.swift in Sources */,
 				4739ED7523ABBB6300A9F689 /* ViewController.swift in Sources */,
-				4739ED7B23ABBB6300A9F689 /* Geekhub_iOS_HW_10.xcdatamodeld in Sources */,
+				4739ED7B23ABBB6300A9F689 /* Model.xcdatamodeld in Sources */,
 				4739ED7123ABBB6300A9F689 /* AppDelegate.swift in Sources */,
 				4739ED7323ABBB6300A9F689 /* SceneDelegate.swift in Sources */,
+				4739ED9523ABC5E400A9F689 /* Teacher+CoreDataProperties.swift in Sources */,
+				4739ED9423ABC5E400A9F689 /* Teacher+CoreDataClass.swift in Sources */,
+				4739ED9723ABC5E400A9F689 /* Project+CoreDataProperties.swift in Sources */,
+				4739ED9323ABC5E400A9F689 /* Student+CoreDataProperties.swift in Sources */,
+				4739ED9623ABC5E400A9F689 /* Project+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geekhub.Geekhub-iOS-HW-10";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geekhub.Geekhub-iOS-HW-10";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,13 +388,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4739ED7923ABBB6300A9F689 /* Geekhub_iOS_HW_10.xcdatamodeld */ = {
+		4739ED7923ABBB6300A9F689 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				4739ED7A23ABBB6300A9F689 /* Geekhub_iOS_HW_10.xcdatamodel */,
 			);
 			currentVersion = 4739ED7A23ABBB6300A9F689 /* Geekhub_iOS_HW_10.xcdatamodel */;
-			path = Geekhub_iOS_HW_10.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
