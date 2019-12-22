@@ -10,138 +10,83 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet private weak var studentsTableView: UITableView!
-    
-    private var students: [String] = []
-    private var projectTheme: [String] = []
-    private var groups: [String] = []
-    private var teachers: [String] = []
+    @IBOutlet private weak var studentLabel: UILabel!
+    @IBOutlet private weak var groupLabel: UILabel!
+    @IBOutlet private weak var projectLabel: UILabel!
+    @IBOutlet private weak var teacherLabel: UILabel!
+
     private var student: Student?
     private var group: Group?
     private var teacher: Teacher?
     private var project: Project?
+
     private let coreData = CoreDataStack.shared
+    private let section = ["студента", "групу", "проект", "вчителя"]
 
-    @IBAction func deleteButton(_ sender: Any) {
-        
-    }
-    
-    @IBAction func addStudentButton(_ sender: UIBarButtonItem) {
-        createAddStudentDialog()
+    @IBAction private func addAndDelete(_ sender: UIButton) {
+        if sender.backgroundColor == .red {
+            sender.backgroundColor = .blue
+            sender.setTitle("Створити \(section[sender.tag])", for: .normal)
+            action(tag: sender.tag, isOn: false)
+        } else {
+            sender.backgroundColor = .red
+            sender.setTitle("Видалити \(section[sender.tag])", for: .normal)
+            action(tag: sender.tag, isOn: true)
+        }
     }
 
-    private func createAddStudentDialog() {
-        let alert = UIAlertController(title: "Додати нову групу", message: "Введіть назву групи", preferredStyle: .alert)
-        let add = UIAlertAction(title: "Додати", style: .default, handler: { action in
-            if let name = alert.textFields?.first?.text {
-                self.createGroup(name: name)
-            }})
-        let cancel = UIAlertAction(title: "Скасувати", style: .cancel, handler: nil)
-        alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Назва"
-        })
-        alert.addAction(add)
-        alert.addAction(cancel)
-        self.present(alert, animated: true)
+    private func action(tag: Int, isOn: Bool) {
+        switch tag {
+        case 0:
+            if isOn {
+            student = Student(context: coreData.persistentContainer.viewContext)
+            guard let student = student else { return }
+            student.name = "Student"
+            saveCoreData()
+            studentLabel.text = student.name
+            } else {
+                coreData.persistentContainer.viewContext.delete(student!)
+            }
+        case 1:
+            if isOn {
+            group = Group(context: coreData.persistentContainer.viewContext)
+            guard let group = group else { return }
+            group.name = "Group"
+            saveCoreData()
+            groupLabel.text = group.name
+            } else {
+                coreData.persistentContainer.viewContext.delete(group!)
+            }
+        case 2:
+            if isOn {
+            project = Project(context: coreData.persistentContainer.viewContext)
+            guard let project = project else { return }
+            project.theme = "Theme"
+            saveCoreData()
+            projectLabel.text = project.theme
+            } else {
+                coreData.persistentContainer.viewContext.delete(project!)
+            }
+        case 3:
+            if isOn {
+            teacher = Teacher(context: coreData.persistentContainer.viewContext)
+            guard let teacher = teacher else { return }
+            teacher.name = "Teacher"
+            saveCoreData()
+            teacherLabel.text = teacher.name
+            } else {
+                coreData.persistentContainer.viewContext.delete(teacher!)
+            }
+        default:
+            return
+        }
     }
-    
+
     private func saveCoreData() {
         do {
         try coreData.persistentContainer.viewContext.save()
         } catch {
             debugPrint(error)
         }
-    }
-
-    private func createStudent(name: String) {
-        student = Student(context: coreData.persistentContainer.viewContext)
-        guard let student = student else { return }
-        student.name = name
-        saveCoreData()
-        students.append(student.name!)
-        createProject(theme: "Project")
-        self.studentsTableView.reloadData()
-    }
-    
-    private func createGroup(name: String) {
-        group = Group(context: coreData.persistentContainer.viewContext)
-        guard let group = group else { return }
-        group.name = name
-        saveCoreData()
-        groups.append(group.name!)
-        self.studentsTableView.reloadData()
-    }
-    
-    private func createTeacher(name: String, birthday: Date) {
-        teacher = Teacher(context: coreData.persistentContainer.viewContext)
-        guard let teacher = teacher else { return }
-        teacher.name = name
-        teacher.birthday = birthday
-        saveCoreData()
-        teachers.append(teacher.name!)
-        self.studentsTableView.reloadData()
-    }
-    
-    private func createProject(theme: String) {
-        project = Project(context: coreData.persistentContainer.viewContext)
-        guard let project = project else { return }
-        project.theme = theme
-        saveCoreData()
-        student?.addToProjects(project)
-        saveCoreData()
-        projectTheme.append(project.theme!)
-    }
-    
-    private func removeStudent() {
-        if let student = self.student {
-            coreData.persistentContainer.viewContext.delete(student)
-        }
-    }
-    
-    private func removeGroup() {
-        if let group = self.group {
-            coreData.persistentContainer.viewContext.delete(group)
-        }
-    }
-    
-    private func removeTeacher() {
-        if let teacher = self.teacher {
-            coreData.persistentContainer.viewContext.delete(teacher)
-        }
-    }
-    
-    private func removeProject() {
-        if let project = self.project {
-            coreData.persistentContainer.viewContext.delete(project)
-        }
-    }
-}
-
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
-        cell.textLabel?.text = students[indexPath.row]
-        cell.detailTextLabel?.text = projectTheme[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        students.remove(at: indexPath.row)
-        projectTheme.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        tableView.reloadData()
-        removeStudent()
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return groups.count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return groups[section]
     }
 }

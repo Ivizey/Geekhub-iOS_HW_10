@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Group {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Group> {
@@ -20,7 +19,6 @@ extension Group {
     @NSManaged public var name: String?
     @NSManaged public var students: NSSet?
     @NSManaged public var teachers: NSSet?
-
 }
 
 // MARK: Generated accessors for students
@@ -37,7 +35,6 @@ extension Group {
 
     @objc(removeStudents:)
     @NSManaged public func removeFromStudents(_ values: NSSet)
-
 }
 
 // MARK: Generated accessors for teachers
@@ -54,5 +51,4 @@ extension Group {
 
     @objc(removeTeachers:)
     @NSManaged public func removeFromTeachers(_ values: NSSet)
-
 }

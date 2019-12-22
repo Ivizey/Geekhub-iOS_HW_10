@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Student {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Student> {
@@ -21,7 +20,6 @@ extension Student {
     @NSManaged public var name: String?
     @NSManaged public var group: Group?
     @NSManaged public var projects: NSSet?
-
 }
 
 // MARK: Generated accessors for projects
@@ -38,5 +36,4 @@ extension Student {
 
     @objc(removeProjects:)
     @NSManaged public func removeFromProjects(_ values: NSSet)
-
 }

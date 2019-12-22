@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Project {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Project> {
@@ -19,5 +18,4 @@ extension Project {
 
     @NSManaged public var theme: String?
     @NSManaged public var student: Student?
-
 }
