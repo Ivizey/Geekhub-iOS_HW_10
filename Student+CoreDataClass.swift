@@ -12,5 +12,7 @@ import CoreData
 
 @objc(Student)
 public class Student: NSManagedObject {
-   
+    var projectsArray: [Project] {
+        projects?.allObjects as? [Project] ?? []
+    }
 }

@@ -12,5 +12,10 @@ import CoreData
 
 @objc(Group)
 public class Group: NSManagedObject {
-    
+    var studentsArray: [Student] {
+        students?.allObjects as? [Student] ?? []
+    }
+    var teachersArray: [Teacher] {
+        teachers?.allObjects as? [Teacher] ?? []
+    }
 }

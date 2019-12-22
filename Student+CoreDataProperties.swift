@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  Geekhub-iOS_HW_10
 //
-//  Created by Pavel Bondar on 19.12.2019.
+//  Created by Pavel Bondar on 21.12.2019.
 //  Copyright © 2019 Pavel Bondar. All rights reserved.
 //
 //
@@ -19,8 +19,8 @@ extension Student {
 
     @NSManaged public var birthday: Date?
     @NSManaged public var name: String?
-    @NSManaged public var projects: NSSet?
     @NSManaged public var group: Group?
+    @NSManaged public var projects: NSSet?
 
 }
 

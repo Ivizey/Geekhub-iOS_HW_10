@@ -13,7 +13,7 @@
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="students" inverseEntity="Group"/>
-        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="student" inverseEntity="Project"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Project" inverseName="student" inverseEntity="Project"/>
     </entity>
     <entity name="Teacher" representedClassName="Teacher" syncable="YES">
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
